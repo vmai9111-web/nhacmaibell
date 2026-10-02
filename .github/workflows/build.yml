@@ -23,7 +23,9 @@ jobs:
       uses: gradle/actions/setup-gradle@v3
 
     - name: Build APK
-      run: gradle assembleDebug --stacktrace
+      run: |
+        cd nhacmaibell
+        gradle assembleDebug --stacktrace
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
