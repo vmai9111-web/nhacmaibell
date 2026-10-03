@@ -149,7 +149,9 @@ public class MainActivity extends AppCompatActivity {
             while (cursor.moveToNext()) {
                 String path = cursor.getString(0);
                 String title = cursor.getString(1);
-                if (path != null && path.endsWith(".mp3")) {
+
+                // Kiểm tra file có đuôi .mp3 VÀ đường dẫn thư mục có chứa "zxcv25" không
+                if (path != null && path.endsWith(".mp3") && path.toLowerCase().contains("zxcv25")) {
                     mp3Paths.add(path);
                     mp3Titles.add(title != null ? title : "Unknown");
                 }
