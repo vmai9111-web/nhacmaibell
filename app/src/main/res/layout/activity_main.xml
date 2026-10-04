@@ -3,70 +3,71 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:gravity="center_horizontal">
+    android:padding="16dp">
 
     <TextView
         android:id="@+id/tvSongTitle"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:text="Chọn bài hát hoặc nhấn Play"
+        android:layout_height="wrap_content"
+        android:text="Chưa chọn bài hát"
         android:textSize="18sp"
         android:textStyle="bold"
         android:gravity="center"
-        android:ellipsize="end"
-        android:maxLines="2" />
+        android:paddingBottom="12dp" />
 
-    <!-- Danh sách MP3 tìm thấy -->
-    <ListView
-        android:id="@+id/listViewSongs"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="4"
-        android:divider="#DDDDDD"
-        android:dividerHeight="1dp" />
-
-    <!-- Thanh điều khiển phía dưới -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
-        android:paddingTop="16dp"
-        android:paddingBottom="8dp">
-
-        <Button
-            android:id="@+id/btnLoop"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:text="🔁"
-            android:textSize="18sp" />
+        android:paddingBottom="12dp">
 
         <Button
             android:id="@+id/btnPrev"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:text="⏮"
-            android:textSize="20sp"
-            android:layout_marginStart="8dp" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⏮" />
 
         <Button
             android:id="@+id/btnPlayPause"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="▶"
-            android:textSize="26sp"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp" />
 
         <Button
             android:id="@+id/btnNext"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:text="⏭"
-            android:textSize="20sp"
-            android:layout_marginEnd="8dp" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⏭" />
+
+        <Button
+            android:id="@+id/btnLoop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🔁"
+            android:layout_marginStart="8dp" />
     </LinearLayout>
+
+    <!-- Thanh Playlist nằm ngay trên danh sách bài hát -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:paddingBottom="8dp">
+
+        <LinearLayout
+            android:id="@+id/layoutPlaylists"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" />
+    </HorizontalScrollView>
+
+    <ListView
+        android:id="@+id/listViewSongs"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
 </LinearLayout>
